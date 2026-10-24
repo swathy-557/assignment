@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Academic Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>📚 Student Task Manager</h1>
+            <p>Organize your assignments, exams, and study sessions</p>
+        </header>
+
+        <section class="task-form-section">
+            <form id="taskForm">
+                <div class="input-group">
+                    <input type="text" id="taskTitle" placeholder="Task or Assignment Title..." required>
+                </div>
+                
+                <div class="input-row">
+                    <div class="input-group">
+                        <select id="taskSubject" required>
+                            <option value="" disabled selected>Select Subject</option>
+                            <option value="Mathematics">Mathematics</option>
+                            <option value="Physics">Physics</option>
+                            <option value="Chemistry">Chemistry</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Literature">Literature</option>
+                            <option value="History">History</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <select id="taskPriority" required>
+                            <option value="" disabled selected>Priority</option>
+                            <option value="High">🔴 High</option>
+                            <option value="Medium">🟡 Medium</option>
+                            <option value="Low">🟢 Low</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="date" id="taskDate" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-add">Add Task</button>
+            </form>
+        </section>
+
+        <section class="controls-section">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+            <div class="task-stats">
+                <span id="taskCounter">0 tasks remaining</span>
+            </div>
+        </section>
+
+        <section class="task-list-section">
+            <ul id="taskList">
+            </ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
